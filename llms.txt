@@ -2,7 +2,7 @@
 
 > Open-source personal portfolio template for developers, built with Astro, React, and Tailwind CSS.
 > Designed to be cloned, customized, and deployed with minimal configuration; includes a working
-> contact form, a Spotify album embed, and a Firebase-backed like counter.
+> contact form, a Spotify album embed, and a Firebase-backed like counter. 
 
 Built as an Astro static site with React islands for interactive components. Requires Node.js >= 20
 and pnpm >= 9. External services needed for full functionality: a Formspree account (contact form)
