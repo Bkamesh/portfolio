@@ -1,10 +1,14 @@
 ---
-const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+import { Image } from "astro:assets";
+import healthcarePlatform from "../assets/projects/healthcare-platform.svg";
+import cdcSync from "../assets/projects/cdc-sync.svg";
+import streamingLakehouse from "../assets/projects/streaming-lakehouse.svg";
+import emrReporting from "../assets/projects/emr-reporting.svg";
 
 interface Project {
   title: string;
   tagline: string;
-  image: string;
+  image: ImageMetadata;
   status: string;
   techStack: string[];
   overview: string;
@@ -15,7 +19,7 @@ const projects: Project[] = [
   {
     title: "Healthcare Data Platform with HL7 FHIR",
     tagline: "Enterprise Cloud Data Warehouse & Analytics",
-    image: `${cleanBase}/projects/healthcare-platform.svg`,
+    image: healthcarePlatform,
     status: "Production",
     techStack: [
       "Amazon Redshift",
@@ -38,7 +42,7 @@ const projects: Project[] = [
   {
     title: "Distributed Multi-Region CDC Platform",
     tagline: "High-Consistency Cross-Region Database Synchronization",
-    image: `${cleanBase}/projects/cdc-sync.svg`,
+    image: cdcSync,
     status: "Production",
     techStack: [
       "Apache Kafka",
@@ -62,7 +66,7 @@ const projects: Project[] = [
   {
     title: "Real-Time Streaming Lakehouse PoC",
     tagline: "Sub-Minute Incremental Changelog Processing",
-    image: `${cleanBase}/projects/streaming-lakehouse.svg`,
+    image: streamingLakehouse,
     status: "PoC Architecture",
     techStack: [
       "Apache Flink CDC",
@@ -83,7 +87,7 @@ const projects: Project[] = [
   {
     title: "Clinical Reporting & EMR Data Integration",
     tagline: "Modern Microservices for Hospital Operations",
-    image: `${cleanBase}/projects/emr-reporting.svg`,
+    image: emrReporting,
     status: "Production",
     techStack: [
       "ASP.NET Core (.NET 8)",
@@ -125,7 +129,7 @@ const projects: Project[] = [
             <div>
               <!-- Visual Graphic Banner -->
               <div class="relative overflow-hidden aspect-[16/9] bg-[#101014] border-b border-[#ffffff10]">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

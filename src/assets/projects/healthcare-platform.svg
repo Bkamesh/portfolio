@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121216"/>
+      <stop offset="100%" stop-color="#181524"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A476FF"/>
+      <stop offset="100%" stop-color="#D4BBFF"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2BA"/>
+      <stop offset="100%" stop-color="#5BFCE8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg1)"/>
+  
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff08" stroke-width="1">
+    <line x1="0" y1="75" x2="800" y2="75"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+  </g>
+
+  <!-- Flow Diagram -->
+  <g transform="translate(60, 110)">
+    <!-- Node 1: Aurora Postgres -->
+    <rect x="0" y="50" width="160" height="90" rx="12" fill="#1b1b22" stroke="#ffffff18" stroke-width="1.5"/>
+    <text x="80" y="90" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">Aurora PostgreSQL</text>
+    <text x="80" y="112" fill="#a0a0b0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Clinical OLTP Data</text>
+
+    <!-- Connector 1 -->
+    <path d="M160 95 L225 95" stroke="#A476FF" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <circle cx="225" cy="95" r="4" fill="#A476FF"/>
+
+    <!-- Node 2: MWAA + dbt -->
+    <rect x="235" y="40" width="180" height="110" rx="14" fill="#201c30" stroke="#A476FF66" stroke-width="1.5"/>
+    <text x="325" y="78" fill="#D4BBFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Airflow (MWAA) + dbt</text>
+    <text x="325" y="100" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Modular Transformations</text>
+    <rect x="260" y="115" width="130" height="22" rx="6" fill="#A476FF22"/>
+    <text x="325" y="130" fill="#A476FF" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">HL7 FHIR STANDARDS</text>
+
+    <!-- Connector 2 -->
+    <path d="M415 95 L480 95" stroke="#00D2BA" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <circle cx="480" cy="95" r="4" fill="#00D2BA"/>
+
+    <!-- Node 3: Redshift -->
+    <rect x="490" y="50" width="180" height="90" rx="12" fill="#172224" stroke="#00D2BA66" stroke-width="1.5"/>
+    <text x="580" y="90" fill="#5BFCE8" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Amazon Redshift</text>
+    <text x="580" y="112" fill="#a0b0b5" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Enterprise Clinical Analytics</text>
+  </g>
+
+  <!-- Tags / Highlights at Bottom -->
+  <g transform="translate(60, 350)">
+    <rect x="0" y="0" width="85" height="28" rx="8" fill="#ffffff10"/>
+    <text x="42.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">AWS Redshift</text>
+
+    <rect x="95" y="0" width="55" height="28" rx="8" fill="#ffffff10"/>
+    <text x="122.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">dbt</text>
+
+    <rect x="160" y="0" width="80" height="28" rx="8" fill="#ffffff10"/>
+    <text x="200" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">AWS MWAA</text>
+
+    <rect x="250" y="0" width="95" height="28" rx="8" fill="#ffffff10"/>
+    <text x="297.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">HL7 FHIR</text>
+
+    <rect x="355" y="0" width="95" height="28" rx="8" fill="#ffffff10"/>
+    <text x="402.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">PostgreSQL</text>
+  </g>
+
+  <!-- Title Badge -->
+  <text x="60" y="65" fill="#A476FF" font-family="system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">ENTERPRISE CLOUD ANALYTICS</text>
+  <text x="60" y="90" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Healthcare Data Platform with HL7 FHIR</text>
+</svg>
+
