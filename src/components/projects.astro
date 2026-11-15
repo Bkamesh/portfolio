@@ -1,0 +1,192 @@
+---
+const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+interface Project {
+  title: string;
+  tagline: string;
+  image: string;
+  status: string;
+  techStack: string[];
+  overview: string;
+  responsibilities: string[];
+}
+
+const projects: Project[] = [
+  {
+    title: "Healthcare Data Platform with HL7 FHIR",
+    tagline: "Enterprise Cloud Data Warehouse & Analytics",
+    image: `${cleanBase}/projects/healthcare-platform.svg`,
+    status: "Production",
+    techStack: [
+      "Amazon Redshift",
+      "Aurora PostgreSQL",
+      "dbt",
+      "Amazon MWAA",
+      "HL7 FHIR",
+      "SQL",
+    ],
+    overview:
+      "Architected and delivered a production healthcare analytical platform ingesting operational clinical data from Aurora PostgreSQL into Amazon Redshift, applying modular dbt transformations and HL7 FHIR standardization for enterprise analytics.",
+    responsibilities: [
+      "Designed and managed automated data ingestion pipelines from Amazon Aurora PostgreSQL into Amazon Redshift.",
+      "Developed modular, incremental dbt models, custom macros, and automated data quality tests for curated analytical schemas.",
+      "Enforced HL7 FHIR standards within the transformation layer to establish interoperable, standardized healthcare data models.",
+      "Orchestrated end-to-end ELT pipelines, dependency graphs, and automated retries using Amazon MWAA (Managed Workflows for Apache Airflow).",
+      "Optimized Redshift table distribution keys, sort keys, and query performance for downstream BI and clinical reporting workloads.",
+    ],
+  },
+  {
+    title: "Distributed Multi-Region CDC Platform",
+    tagline: "High-Consistency Cross-Region Database Synchronization",
+    image: `${cleanBase}/projects/cdc-sync.svg`,
+    status: "Production",
+    techStack: [
+      "Apache Kafka",
+      "Debezium",
+      "Apache Airflow",
+      "Python (asyncio)",
+      "Prometheus",
+      "Grafana",
+      "Loki",
+    ],
+    overview:
+      "Designed and deployed a multi-region Change Data Capture (CDC) platform replicating transactional data from distributed hospital systems to a central data center with high consistency and end-to-end observability.",
+    responsibilities: [
+      "Implemented Debezium SQL Server & PostgreSQL connectors for sub-second, non-blocking CDC ingestion.",
+      "Developed custom Python asyncio consumers to strictly enforce event ordering, foreign-key integrity, and ACID guarantees.",
+      "Created metadata-driven Airflow DAG generation framework for dynamic automated pipeline orchestration.",
+      "Built automated schema validation, intelligent retry backoffs, and pipeline integrity monitors.",
+      "Integrated Prometheus exporters for Kafka brokers & Connect; built Grafana dashboards and centralized Loki logging for debugging and SLA tracking.",
+    ],
+  },
+  {
+    title: "Real-Time Streaming Lakehouse PoC",
+    tagline: "Sub-Minute Incremental Changelog Processing",
+    image: `${cleanBase}/projects/streaming-lakehouse.svg`,
+    status: "PoC Architecture",
+    techStack: [
+      "Apache Flink CDC",
+      "Flink SQL",
+      "Apache Paimon",
+      "Trino",
+      "Apache Kafka",
+    ],
+    overview:
+      "Architected an end-to-end real-time streaming lakehouse Proof of Concept using Flink CDC, Flink SQL, Apache Paimon, and Trino to evaluate sub-minute CDC ingestion and incremental changelog processing.",
+    responsibilities: [
+      "Built continuous streaming changelog ingestion pipeline handling INSERT, UPDATE, and DELETE operations seamlessly.",
+      "Implemented Apache Paimon open table format for ACID guarantees, primary-key changelog consolidation, and efficient snapshotting.",
+      "Connected Trino query engine to evaluate sub-minute query latency and ad-hoc analytics over active streaming changelogs.",
+      "Benchmarked throughput and operational efficiency before finalizing the production AWS data lakehouse stack.",
+    ],
+  },
+  {
+    title: "Clinical Reporting & EMR Data Integration",
+    tagline: "Modern Microservices for Hospital Operations",
+    image: `${cleanBase}/projects/emr-reporting.svg`,
+    status: "Production",
+    techStack: [
+      "ASP.NET Core (.NET 8)",
+      "SSRS 2017",
+      "FastReport.NET",
+      "PostgreSQL",
+      "SQL Server",
+      "Dapper",
+    ],
+    overview:
+      "Engineered modern and legacy-compatible reporting solutions to support clinical analytics, operational workflows, and real-time electronic medical records (EMR) integration.",
+    responsibilities: [
+      "Developed a .NET 8 microservice utilizing Clean Architecture, Dapper, and ADO.NET for high-throughput reporting queries.",
+      "Designed reusable and efficient data access layers spanning multi-engine clinical databases.",
+      "Created dynamic, parameterized SSRS templates (for .NET MVC applications) and FastReport templates to power real-time dashboards.",
+      "Integrated heterogeneous patient and operational datasets directly into core EMR hospital workflows.",
+    ],
+  },
+];
+---
+
+<section
+  id="projects"
+  class="py-16 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto space-y-12">
+    <div>
+      <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec font-medium">Portfolio</h2>
+      <h3 class="text-4xl md:text-5xl font-medium tracking-tight">Featured Projects</h3>
+      <p class="text-[var(--white-icon)] mt-2 text-base md:text-lg max-w-2xl">
+        Production-grade data platforms, real-time streaming pipelines, and analytical architectures built for scale and reliability.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        projects.map((project) => (
+          <div class="group flex flex-col justify-between rounded-2xl bg-[#1414149c] border border-[var(--white-icon-tr)] overflow-hidden hover:border-[var(--sec)]/40 transition-all duration-300">
+            <div>
+              <!-- Visual Graphic Banner -->
+              <div class="relative overflow-hidden aspect-[16/9] bg-[#101014] border-b border-[#ffffff10]">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div class="absolute top-3 right-3">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md border ${
+                    project.status === "Production"
+                      ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                      : "bg-[var(--sec)]/15 text-[var(--sec)] border-[var(--sec)]/30"
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6 space-y-4">
+                <div>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-[var(--sec)]">
+                    {project.tagline}
+                  </span>
+                  <h4 class="text-xl md:text-2xl font-bold text-white mt-1 group-hover:text-[var(--sec)] transition-colors">
+                    {project.title}
+                  </h4>
+                </div>
+
+                <p class="text-sm text-[var(--white-icon)] leading-relaxed">
+                  {project.overview}
+                </p>
+
+                <!-- Key highlights list -->
+                <div class="space-y-1.5 pt-2">
+                  <div class="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    Key Deliverables:
+                  </div>
+                  <ul class="space-y-1.5 text-xs text-[var(--white-icon)]">
+                    {project.responsibilities.slice(0, 3).map((item) => (
+                      <li class="flex items-start gap-2">
+                        <span class="text-[var(--sec)] font-bold mt-0.5">▹</span>
+                        <span class="leading-normal">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer: Tech Tags -->
+            <div class="p-6 pt-0">
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-[#ffffff10]">
+                {project.techStack.map((tech) => (
+                  <span class="px-2 py-0.5 text-xs rounded-md bg-[#1d1d22] text-neutral-300 border border-[#ffffff10]">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
