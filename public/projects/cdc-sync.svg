@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416"/>
+      <stop offset="100%" stop-color="#161e28"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg2)"/>
+  
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff08" stroke-width="1">
+    <line x1="0" y1="75" x2="800" y2="75"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <text x="60" y="65" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">REAL-TIME DATA REPLICATION</text>
+  <text x="60" y="90" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Distributed Multi-Region CDC Platform</text>
+
+  <!-- Flow Diagram -->
+  <g transform="translate(60, 120)">
+    <!-- Node 1: Multi-Region DBs -->
+    <rect x="0" y="10" width="160" height="75" rx="10" fill="#1b1b22" stroke="#ffffff18" stroke-width="1.5"/>
+    <text x="80" y="42" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Region A: SQL Server</text>
+    <text x="80" y="62" fill="#90a0b0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Region B: PostgreSQL</text>
+
+    <!-- Connector to Debezium -->
+    <path d="M160 48 L210 48" stroke="#38BDF8" stroke-width="2" stroke-dasharray="3 3"/>
+
+    <!-- Node 2: Debezium & Kafka -->
+    <rect x="220" y="0" width="190" height="95" rx="12" fill="#142330" stroke="#38BDF866" stroke-width="1.5"/>
+    <text x="315" y="32" fill="#7DD3FC" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Debezium CDC Connectors</text>
+    <text x="315" y="54" fill="#E0F2FE" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Apache Kafka Event Bus</text>
+    <text x="315" y="75" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zookeeper • Schema Registry</text>
+
+    <!-- Connector to Consumers -->
+    <path d="M410 48 L460 48" stroke="#38BDF8" stroke-width="2" stroke-dasharray="3 3"/>
+
+    <!-- Node 3: Python Async Consumers & Observability -->
+    <rect x="470" y="0" width="200" height="95" rx="12" fill="#1e1828" stroke="#A476FF66" stroke-width="1.5"/>
+    <text x="570" y="32" fill="#D4BBFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Asyncio Python Consumers</text>
+    <text x="570" y="54" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">ACID Integrity & Event Ordering</text>
+    <text x="570" y="75" fill="#F46800" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Prometheus + Grafana + Loki</text>
+  </g>
+
+  <!-- Tags at Bottom -->
+  <g transform="translate(60, 350)">
+    <rect x="0" y="0" width="115" height="28" rx="8" fill="#ffffff10"/>
+    <text x="57.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Apache Kafka</text>
+
+    <rect x="125" y="0" width="90" height="28" rx="8" fill="#ffffff10"/>
+    <text x="170" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Debezium</text>
+
+    <rect x="225" y="0" width="75" height="28" rx="8" fill="#ffffff10"/>
+    <text x="262.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Python</text>
+
+    <rect x="310" y="0" width="100" height="28" rx="8" fill="#ffffff10"/>
+    <text x="360" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Prometheus</text>
+
+    <rect x="420" y="0" width="80" height="28" rx="8" fill="#ffffff10"/>
+    <text x="460" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Grafana</text>
+
+    <rect x="510" y="0" width="65" height="28" rx="8" fill="#ffffff10"/>
+    <text x="542.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Loki</text>
+  </g>
+</svg>
+

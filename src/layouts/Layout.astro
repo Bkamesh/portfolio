@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/montserrat';
+
 interface Props {
   title: string;
 }
@@ -18,14 +20,6 @@ const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={`${cleanBase}/favicon.png`} />
-
-    <link
-      rel="preload"
-      href={`${cleanBase}/fonts/montserrat-latin-wght-normal.woff2`}
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
 
     <meta
       property="og:title"
@@ -69,15 +63,6 @@ const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 </html>
 
 <style is:global>
-  @font-face {
-    font-family: "Montserrat Variable";
-    src: url("/fonts/montserrat-latin-wght-normal.woff2")
-      format("woff2-variations");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
     --background: #101010;
     --sec: #a476ff;

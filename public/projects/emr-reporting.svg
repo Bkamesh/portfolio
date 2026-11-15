@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141418"/>
+      <stop offset="100%" stop-color="#1c1628"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg4)"/>
+  
+  <!-- Subtle Grid -->
+  <g stroke="#ffffff08" stroke-width="1">
+    <line x1="0" y1="75" x2="800" y2="75"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+  </g>
+
+  <!-- Title Badge -->
+  <text x="60" y="65" fill="#818CF8" font-family="system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">CLINICAL &amp; OPERATIONAL ANALYTICS</text>
+  <text x="60" y="90" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Clinical Reporting &amp; EMR Data Integration</text>
+
+  <!-- Architecture Flow -->
+  <g transform="translate(60, 120)">
+    <!-- Node 1: Multi-DB Source -->
+    <rect x="0" y="0" width="180" height="95" rx="12" fill="#1b1b22" stroke="#ffffff18" stroke-width="1.5"/>
+    <text x="90" y="32" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">EMR Data Repositories</text>
+    <text x="90" y="54" fill="#a0a0b0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">SQL Server &amp; PostgreSQL</text>
+    <text x="90" y="75" fill="#818CF8" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Patient &amp; Operational Data</text>
+
+    <!-- Connector -->
+    <path d="M180 48 L235 48" stroke="#818CF8" stroke-width="2" stroke-dasharray="3 3"/>
+
+    <!-- Node 2: .NET 8 Microservice -->
+    <rect x="245" y="0" width="180" height="95" rx="12" fill="#1e1830" stroke="#818CF866" stroke-width="1.5"/>
+    <text x="335" y="32" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">.NET 8 Microservice</text>
+    <text x="335" y="54" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Clean Architecture</text>
+    <text x="335" y="75" fill="#818CF8" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Dapper • ADO.NET Data Access</text>
+
+    <!-- Connector -->
+    <path d="M425 48 L480 48" stroke="#818CF8" stroke-width="2" stroke-dasharray="3 3"/>
+
+    <!-- Node 3: Reporting Delivery -->
+    <rect x="490" y="0" width="180" height="95" rx="12" fill="#1a2322" stroke="#34D39966" stroke-width="1.5"/>
+    <text x="580" y="32" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Reporting Solutions</text>
+    <text x="580" y="54" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Dynamic SSRS &amp; FastReport</text>
+    <text x="580" y="75" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Real-Time Clinical Dashboards</text>
+  </g>
+
+  <!-- Tags at Bottom -->
+  <g transform="translate(60, 350)">
+    <rect x="0" y="0" width="70" height="28" rx="8" fill="#ffffff10"/>
+    <text x="35" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">.NET 8</text>
+
+    <rect x="80" y="0" width="70" height="28" rx="8" fill="#ffffff10"/>
+    <text x="115" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">Dapper</text>
+
+    <rect x="160" y="0" width="85" height="28" rx="8" fill="#ffffff10"/>
+    <text x="202.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">SSRS 2017</text>
+
+    <rect x="255" y="0" width="115" height="28" rx="8" fill="#ffffff10"/>
+    <text x="312.5" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">FastReport.NET</text>
+
+    <rect x="380" y="0" width="90" height="28" rx="8" fill="#ffffff10"/>
+    <text x="425" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">PostgreSQL</text>
+
+    <rect x="480" y="0" width="90" height="28" rx="8" fill="#ffffff10"/>
+    <text x="525" y="18" fill="#e0e0e0" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">SQL Server</text>
+  </g>
+</svg>
+
