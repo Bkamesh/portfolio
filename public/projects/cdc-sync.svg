@@ -50,7 +50,7 @@
     <!-- Node 3: Python Async Consumers & Observability -->
     <rect x="470" y="0" width="200" height="95" rx="12" fill="#1e1828" stroke="#A476FF66" stroke-width="1.5"/>
     <text x="570" y="32" fill="#D4BBFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Asyncio Python Consumers</text>
-    <text x="570" y="54" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">ACID Integrity & Event Ordering</text>
+    <text x="570" y="54" fill="#dfdfdf" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">ACID Integrity &amp; Event Ordering</text>
     <text x="570" y="75" fill="#F46800" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Prometheus + Grafana + Loki</text>
   </g>
 
