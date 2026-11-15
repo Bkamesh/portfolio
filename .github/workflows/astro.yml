@@ -37,8 +37,6 @@ jobs:
       # Setup pnpm
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       # Enable pnpm dependency caching
       - name: Get pnpm store directory
